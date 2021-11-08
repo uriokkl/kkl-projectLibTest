@@ -18,28 +18,45 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImpo
 class KklProjectListComponent {
     constructor(http) {
         this.http = http;
+        this.projectList = [];
     }
     ngOnInit() {
     }
     getProjectList(projectId) {
         return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=1")
-            .subscribe((data) => alert(data));
+            .subscribe((data) => this.projectList = data);
     }
 }
 KklProjectListComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListComponent, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Component });
 KklProjectListComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.13", type: KklProjectListComponent, selector: "lib-kkl-projectList", ngImport: i0, template: `
-    <p>
-      kkl-project-list works!
-    </p>
+     <div>
+      <table>
+        <tr *ngFor="let projectData of projectList;">
+        <td>{{projectData.projectId}}</td>
+        <td>{{projectData.boardId}}</td>
+        <td>{{projectData.date}}</td>        
+        <td>{{projectData.description}}</td>        
+        <td>{{projectData.decision}}</td>
+        </tr>
+      </table>
+    </div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-kkl-projectList',
                     template: `
-    <p>
-      kkl-project-list works!
-    </p>
+     <div>
+      <table>
+        <tr *ngFor="let projectData of projectList;">
+        <td>{{projectData.projectId}}</td>
+        <td>{{projectData.boardId}}</td>
+        <td>{{projectData.date}}</td>        
+        <td>{{projectData.description}}</td>        
+        <td>{{projectData.decision}}</td>
+        </tr>
+      </table>
+    </div>
   `,
                     styles: []
                 }]

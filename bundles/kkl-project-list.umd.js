@@ -42,22 +42,24 @@
     var KklProjectListComponent = /** @class */ (function () {
         function KklProjectListComponent(http) {
             this.http = http;
+            this.projectList = [];
         }
         KklProjectListComponent.prototype.ngOnInit = function () {
         };
         KklProjectListComponent.prototype.getProjectList = function (projectId) {
+            var _this = this;
             return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=1")
-                .subscribe(function (data) { return alert(data); });
+                .subscribe(function (data) { return _this.projectList = data; });
         };
         return KklProjectListComponent;
     }());
     KklProjectListComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListComponent, deps: [{ token: i1__namespace.HttpClient }], target: i0__namespace.ɵɵFactoryTarget.Component });
-    KklProjectListComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.13", type: KklProjectListComponent, selector: "lib-kkl-projectList", ngImport: i0__namespace, template: "\n    <p>\n      kkl-project-list works!\n    </p>\n  ", isInline: true });
+    KklProjectListComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.13", type: KklProjectListComponent, selector: "lib-kkl-projectList", ngImport: i0__namespace, template: "\n     <div>\n      <table>\n        <tr *ngFor=\"let projectData of projectList;\">\n        <td>{{projectData.projectId}}</td>\n        <td>{{projectData.boardId}}</td>\n        <td>{{projectData.date}}</td>        \n        <td>{{projectData.description}}</td>        \n        <td>{{projectData.decision}}</td>\n        </tr>\n      </table>\n    </div>\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-kkl-projectList',
-                        template: "\n    <p>\n      kkl-project-list works!\n    </p>\n  ",
+                        template: "\n     <div>\n      <table>\n        <tr *ngFor=\"let projectData of projectList;\">\n        <td>{{projectData.projectId}}</td>\n        <td>{{projectData.boardId}}</td>\n        <td>{{projectData.date}}</td>        \n        <td>{{projectData.description}}</td>        \n        <td>{{projectData.decision}}</td>\n        </tr>\n      </table>\n    </div>\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return [{ type: i1__namespace.HttpClient }]; } });

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import * as i0 from "@angular/core";
 export declare class KklProjectListComponent implements OnInit {
     private http;
+    projectList: never[];
     constructor(http: HttpClient);
     ngOnInit(): void;
     getProjectList(projectId: string): import("rxjs").Subscription;
