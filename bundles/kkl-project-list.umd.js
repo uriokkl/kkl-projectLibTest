@@ -46,7 +46,8 @@
         KklProjectListComponent.prototype.ngOnInit = function () {
         };
         KklProjectListComponent.prototype.getProjectList = function (projectId) {
-            return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=1");
+            return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=1")
+                .subscribe(function (data) { return alert(data); });
         };
         return KklProjectListComponent;
     }());
