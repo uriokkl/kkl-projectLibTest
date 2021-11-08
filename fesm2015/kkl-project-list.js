@@ -2,6 +2,8 @@ import * as i0 from '@angular/core';
 import { Injectable, Component, NgModule } from '@angular/core';
 import * as i1 from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import * as i2 from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 class KklProjectListService {
     constructor() { }
@@ -30,6 +32,7 @@ class KklProjectListComponent {
 KklProjectListComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListComponent, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Component });
 KklProjectListComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.13", type: KklProjectListComponent, selector: "lib-kkl-projectList", ngImport: i0, template: `
      <div>
+     {{projectList | json}}
       <table>
         <tr *ngFor="let projectData of projectList;">
         <td>{{projectData.projectId}}</td>
@@ -40,13 +43,14 @@ KklProjectListComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0"
         </tr>
       </table>
     </div>
-  `, isInline: true });
+  `, isInline: true, directives: [{ type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }], pipes: { "json": i2.JsonPipe } });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-kkl-projectList',
                     template: `
      <div>
+     {{projectList | json}}
       <table>
         <tr *ngFor="let projectData of projectList;">
         <td>{{projectData.projectId}}</td>
@@ -61,13 +65,15 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImpo
                     styles: []
                 }]
         }], ctorParameters: function () { return [{ type: i1.HttpClient }]; } });
+class ProjectDetailModel {
+}
 
 class KklProjectListModule {
 }
 KklProjectListModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-KklProjectListModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListModule, declarations: [KklProjectListComponent], imports: [HttpClientModule], exports: [KklProjectListComponent] });
+KklProjectListModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListModule, declarations: [KklProjectListComponent], imports: [HttpClientModule, CommonModule], exports: [KklProjectListComponent] });
 KklProjectListModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListModule, imports: [[
-            HttpClientModule,
+            HttpClientModule, CommonModule
         ]] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListModule, decorators: [{
             type: NgModule,
@@ -76,7 +82,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImpo
                         KklProjectListComponent
                     ],
                     imports: [
-                        HttpClientModule,
+                        HttpClientModule, CommonModule
                     ],
                     exports: [
                         KklProjectListComponent
@@ -92,5 +98,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImpo
  * Generated bundle index. Do not edit.
  */
 
-export { KklProjectListComponent, KklProjectListModule, KklProjectListService };
+export { KklProjectListComponent, KklProjectListModule, KklProjectListService, ProjectDetailModel };
 //# sourceMappingURL=kkl-project-list.js.map
