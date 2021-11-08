@@ -31,33 +31,61 @@ class KklProjectListComponent {
 }
 KklProjectListComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListComponent, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Component });
 KklProjectListComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.13", type: KklProjectListComponent, selector: "lib-kkl-projectList", ngImport: i0, template: `
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
      <div>
      {{projectList | json}}
-      <table>
+      <br/>
+      <table >
+        <tr>
+          <td>מספר פרוייקט</td>
+          <td>boardId</td>
+          <td>תאריך</td>
+          <td>תאור</td>
+          <td>החלטה</td>
+        </tr>
         <tr *ngFor="let projectData of projectList;">
-        <td>{{projectData.projectId}}</td>
-        <td>{{projectData.boardId}}</td>
-        <td>{{projectData.date}}</td>        
-        <td>{{projectData.description}}</td>        
-        <td>{{projectData.decision}}</td>
+          <td>{{projectData.projectId}}</td>
+          <td>{{projectData.boardId}}</td>
+          <td>{{projectData.date}}</td>        
+          <td>{{projectData.description}}</td>        
+          <td>{{projectData.decision}}</td>
         </tr>
       </table>
     </div>
-  `, isInline: true, directives: [{ type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }], pipes: { "json": i2.JsonPipe } });
+  `, isInline: true, styles: ["\ntable, th, td {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\n"], directives: [{ type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }], pipes: { "json": i2.JsonPipe } });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-kkl-projectList',
                     template: `
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
      <div>
      {{projectList | json}}
-      <table>
+      <br/>
+      <table >
+        <tr>
+          <td>מספר פרוייקט</td>
+          <td>boardId</td>
+          <td>תאריך</td>
+          <td>תאור</td>
+          <td>החלטה</td>
+        </tr>
         <tr *ngFor="let projectData of projectList;">
-        <td>{{projectData.projectId}}</td>
-        <td>{{projectData.boardId}}</td>
-        <td>{{projectData.date}}</td>        
-        <td>{{projectData.description}}</td>        
-        <td>{{projectData.decision}}</td>
+          <td>{{projectData.projectId}}</td>
+          <td>{{projectData.boardId}}</td>
+          <td>{{projectData.date}}</td>        
+          <td>{{projectData.description}}</td>        
+          <td>{{projectData.decision}}</td>
         </tr>
       </table>
     </div>
