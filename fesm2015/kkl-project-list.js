@@ -31,7 +31,7 @@ class KklProjectListComponent {
         this.getProjectList(this.projectId);
     }
     getProjectList(projectId) {
-        return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=1")
+        return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=" + projectId)
             .subscribe((data) => this.projectList = data);
     }
 }
@@ -49,9 +49,10 @@ table, th, td {
       <input type="text" [(ngModel)]="projectId"> 
       <button type="button" (click)="GetProjects()">חיפוש</button>
      </div>
-     {{projectList | json}}
+     
       <br/>
       <br/>
+
       <table >
         <tr>
           <td>מספר פרוייקט</td>
@@ -69,7 +70,7 @@ table, th, td {
         </tr>
       </table>
     </div>
-  `, isInline: true, styles: ["\ntable, th, td {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\n"], directives: [{ type: i2.DefaultValueAccessor, selector: "input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]" }, { type: i2.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { type: i2.NgModel, selector: "[ngModel]:not([formControlName]):not([formControl])", inputs: ["name", "disabled", "ngModel", "ngModelOptions"], outputs: ["ngModelChange"], exportAs: ["ngModel"] }, { type: i3.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }], pipes: { "json": i3.JsonPipe } });
+  `, isInline: true, styles: ["\ntable, th, td {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\n"], directives: [{ type: i2.DefaultValueAccessor, selector: "input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]" }, { type: i2.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { type: i2.NgModel, selector: "[ngModel]:not([formControlName]):not([formControl])", inputs: ["name", "disabled", "ngModel", "ngModelOptions"], outputs: ["ngModelChange"], exportAs: ["ngModel"] }, { type: i3.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0, type: KklProjectListComponent, decorators: [{
             type: Component,
             args: [{
@@ -87,9 +88,10 @@ table, th, td {
       <input type="text" [(ngModel)]="projectId"> 
       <button type="button" (click)="GetProjects()">חיפוש</button>
      </div>
-     {{projectList | json}}
+     
       <br/>
       <br/>
+
       <table >
         <tr>
           <td>מספר פרוייקט</td>
