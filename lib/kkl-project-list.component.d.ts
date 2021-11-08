@@ -1,10 +1,8 @@
 import { OnInit } from '@angular/core';
-import * as ɵngcc0 from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 export declare class KklProjectListComponent implements OnInit {
-    constructor();
+    private http;
+    constructor(http: HttpClient);
     ngOnInit(): void;
-    static ɵfac: ɵngcc0.ɵɵFactoryDeclaration<KklProjectListComponent, never>;
-    static ɵcmp: ɵngcc0.ɵɵComponentDeclaration<KklProjectListComponent, "lib-kkl-projectList", never, {}, {}, never, never>;
+    getProjectList(projectId: string): import("rxjs").Observable<Object>;
 }
-
-//# sourceMappingURL=kkl-project-list.component.d.ts.map

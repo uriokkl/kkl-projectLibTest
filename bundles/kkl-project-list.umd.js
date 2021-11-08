@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('kkl-project-list', ['exports', '@angular/core'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["kkl-project-list"] = {}, global.ng.core));
-})(this, (function (exports, i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common/http')) :
+    typeof define === 'function' && define.amd ? define('kkl-project-list', ['exports', '@angular/core', '@angular/common/http'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["kkl-project-list"] = {}, global.ng.core, global.ng.common.http));
+})(this, (function (exports, i0, http) { 'use strict';
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -38,9 +38,13 @@
     KklProjectListService.ctorParameters = function () { return []; };
 
     var KklProjectListComponent = /** @class */ (function () {
-        function KklProjectListComponent() {
+        function KklProjectListComponent(http) {
+            this.http = http;
         }
         KklProjectListComponent.prototype.ngOnInit = function () {
+        };
+        KklProjectListComponent.prototype.getProjectList = function (projectId) {
+            return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=1");
         };
         return KklProjectListComponent;
     }());
@@ -50,7 +54,9 @@
                     template: "\n    <p>\n      kkl-project-list works!\n    </p>\n  "
                 },] }
     ];
-    KklProjectListComponent.ctorParameters = function () { return []; };
+    KklProjectListComponent.ctorParameters = function () { return [
+        { type: http.HttpClient }
+    ]; };
 
     var KklProjectListModule = /** @class */ (function () {
         function KklProjectListModule() {
@@ -62,7 +68,9 @@
                     declarations: [
                         KklProjectListComponent
                     ],
-                    imports: [],
+                    imports: [
+                        http.HttpClientModule,
+                    ],
                     exports: [
                         KklProjectListComponent
                     ]

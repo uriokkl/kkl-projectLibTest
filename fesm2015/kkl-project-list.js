@@ -1,5 +1,6 @@
 import * as i0 from '@angular/core';
 import { Injectable, Component, NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 class KklProjectListService {
     constructor() { }
@@ -13,8 +14,13 @@ KklProjectListService.decorators = [
 KklProjectListService.ctorParameters = () => [];
 
 class KklProjectListComponent {
-    constructor() { }
+    constructor(http) {
+        this.http = http;
+    }
     ngOnInit() {
+    }
+    getProjectList(projectId) {
+        return this.http.get("https://virtserver.swaggerhub.com/shivek/ProjectMngScenarios/1.0.0/scenario12?projectId=1");
     }
 }
 KklProjectListComponent.decorators = [
@@ -27,7 +33,9 @@ KklProjectListComponent.decorators = [
   `
             },] }
 ];
-KklProjectListComponent.ctorParameters = () => [];
+KklProjectListComponent.ctorParameters = () => [
+    { type: HttpClient }
+];
 
 class KklProjectListModule {
 }
@@ -36,7 +44,9 @@ KklProjectListModule.decorators = [
                 declarations: [
                     KklProjectListComponent
                 ],
-                imports: [],
+                imports: [
+                    HttpClientModule,
+                ],
                 exports: [
                     KklProjectListComponent
                 ]
