@@ -1,0 +1,1 @@
+{"version":3,"file":"kkl-project-list.module.d.ts","sources":["kkl-project-list.module.d.ts"],"names":[],"mappings":";;AAAA;;;;AACA","sourcesContent":["export declare class KklProjectListModule {\r\n}\r\n"]}

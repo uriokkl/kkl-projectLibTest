@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of kkl-project-list
+ */
+export * from './lib/kkl-project-list.service';
+export * from './lib/kkl-project-list.component';
+export * from './lib/kkl-project-list.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL2trbC1wcm9qZWN0LWxpc3Qvc3JjL3B1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFFSCxjQUFjLGdDQUFnQyxDQUFDO0FBQy9DLGNBQWMsa0NBQWtDLENBQUM7QUFDakQsY0FBYywrQkFBK0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2Yga2tsLXByb2plY3QtbGlzdFxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vbGliL2trbC1wcm9qZWN0LWxpc3Quc2VydmljZSc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9ra2wtcHJvamVjdC1saXN0LmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9ra2wtcHJvamVjdC1saXN0Lm1vZHVsZSc7XG4iXX0=
