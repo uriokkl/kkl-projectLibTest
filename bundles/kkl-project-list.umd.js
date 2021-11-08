@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common/http')) :
     typeof define === 'function' && define.amd ? define('kkl-project-list', ['exports', '@angular/core', '@angular/common/http'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["kkl-project-list"] = {}, global.ng.core, global.ng.common.http));
-})(this, (function (exports, i0, http) { 'use strict';
+})(this, (function (exports, i0, i1) { 'use strict';
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -23,19 +23,21 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
+    var i1__namespace = /*#__PURE__*/_interopNamespace(i1);
 
     var KklProjectListService = /** @class */ (function () {
         function KklProjectListService() {
         }
         return KklProjectListService;
     }());
-    KklProjectListService.ɵprov = i0__namespace.ɵɵdefineInjectable({ factory: function KklProjectListService_Factory() { return new KklProjectListService(); }, token: KklProjectListService, providedIn: "root" });
-    KklProjectListService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root'
-                },] }
-    ];
-    KklProjectListService.ctorParameters = function () { return []; };
+    KklProjectListService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    KklProjectListService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListService, providedIn: 'root' });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListService, decorators: [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root'
+                    }]
+            }], ctorParameters: function () { return []; } });
 
     var KklProjectListComponent = /** @class */ (function () {
         function KklProjectListComponent(http) {
@@ -48,34 +50,41 @@
         };
         return KklProjectListComponent;
     }());
-    KklProjectListComponent.decorators = [
-        { type: i0.Component, args: [{
-                    selector: 'lib-kkl-projectList',
-                    template: "\n    <p>\n      kkl-project-list works!\n    </p>\n  "
-                },] }
-    ];
-    KklProjectListComponent.ctorParameters = function () { return [
-        { type: http.HttpClient }
-    ]; };
+    KklProjectListComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListComponent, deps: [{ token: i1__namespace.HttpClient }], target: i0__namespace.ɵɵFactoryTarget.Component });
+    KklProjectListComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.13", type: KklProjectListComponent, selector: "lib-kkl-projectList", ngImport: i0__namespace, template: "\n    <p>\n      kkl-project-list works!\n    </p>\n  ", isInline: true });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListComponent, decorators: [{
+                type: i0.Component,
+                args: [{
+                        selector: 'lib-kkl-projectList',
+                        template: "\n    <p>\n      kkl-project-list works!\n    </p>\n  ",
+                        styles: []
+                    }]
+            }], ctorParameters: function () { return [{ type: i1__namespace.HttpClient }]; } });
 
     var KklProjectListModule = /** @class */ (function () {
         function KklProjectListModule() {
         }
         return KklProjectListModule;
     }());
-    KklProjectListModule.decorators = [
-        { type: i0.NgModule, args: [{
-                    declarations: [
-                        KklProjectListComponent
-                    ],
-                    imports: [
-                        http.HttpClientModule,
-                    ],
-                    exports: [
-                        KklProjectListComponent
-                    ]
-                },] }
-    ];
+    KklProjectListModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
+    KklProjectListModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListModule, declarations: [KklProjectListComponent], imports: [i1.HttpClientModule], exports: [KklProjectListComponent] });
+    KklProjectListModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListModule, imports: [[
+                i1.HttpClientModule,
+            ]] });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.13", ngImport: i0__namespace, type: KklProjectListModule, decorators: [{
+                type: i0.NgModule,
+                args: [{
+                        declarations: [
+                            KklProjectListComponent
+                        ],
+                        imports: [
+                            i1.HttpClientModule,
+                        ],
+                        exports: [
+                            KklProjectListComponent
+                        ]
+                    }]
+            }] });
 
     /*
      * Public API Surface of kkl-project-list
