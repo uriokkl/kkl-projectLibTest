@@ -37,8 +37,9 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
-     <div>
+     <div dir="rtl">
      {{projectList | json}}
+      <br/>
       <br/>
       <table >
         <tr>
@@ -69,8 +70,9 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
-     <div>
+     <div dir="rtl">
      {{projectList | json}}
+      <br/>
       <br/>
       <table >
         <tr>
